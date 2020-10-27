@@ -1,0 +1,11 @@
+.title{
+  display: inline-block;
+  margin-right:100px;
+}
+.groupsBtn{
+  display: inline-block;
+  background-color:#ea5455;
+}
+.home-page-card{
+  background-color: #f7f7f7;
+}
