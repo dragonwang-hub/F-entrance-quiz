@@ -12,9 +12,13 @@ class Home extends Component {
     console.log("分组学员");
     const data = await getGroupStudents();
     console.log(data)
+    this.setState({
+      groupsStudent: data
+    })
   }
   addStudent = async () => {
     console.log("添加学员");
+    // prompt('');
     const data = await addStudent();
     console.log(data)
   }
@@ -23,6 +27,9 @@ class Home extends Component {
     console.log("打印所有学员");
     const data = await getAllStudents();
     console.log(data)
+    this.setState({
+      studentList: data
+    })
   }
 
   render() {

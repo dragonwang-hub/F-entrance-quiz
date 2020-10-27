@@ -10,7 +10,7 @@ export const getGroupStudents = async () => {
   return response.data;
 }
 
-export const addStudent = async () => {
-  const response = await axios.post('http://localhost:8080/add')
+export const addStudent = async (name) => {
+  const response = await axios.post('http://localhost:8080/add', name)
   return response.data;
 }
