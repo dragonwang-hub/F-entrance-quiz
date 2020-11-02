@@ -1,55 +1,77 @@
-import React, { Component } from 'react';
-import { getGroupStudents, addStudent } from './action';
+import React, {Component} from 'react';
+import StudentList from './StudentList';
+import GroupsStudent from "./GroupsStudent";
+import {getGroupStudents, addStudent, getAllStudents, makeGroups} from './action';
 import './Home.css';
 
+
 class Home extends Component {
-  state = {
-    studentList: [],
-    groupsStudent: {},
-  }
+    state = {
+        studentList: [],
+        groupsStudent: {},
+    }
 
-  getAll = async () => {
-    console.log("分组学员");
-    const data = await getGroupStudents();
-    console.log(data)
-    this.setState({
-      groupsStudent: data
-    })
-  }
-  addStudent = async () => {
-    console.log("添加学员");
-    // prompt('');
-    const data = await addStudent();
-    console.log(data)
-  }
+    makeGroup = async () => {
+        await makeGroups();
+        location.reload(false);
+    }
 
-  getAllStudents = async () => {
-    console.log("打印所有学员");
-    const data = await getAllStudents();
-    console.log(data)
-    this.setState({
-      studentList: data
-    })
-  }
+    getAllGroup = async () => {
+        const data = await getGroupStudents();
+        const groups = [];
+        for (const key in data) {
+            const obj = {
+                'key': key,
+                'value': data[key],
+            }
+            groups.push(obj);
+        }
+        this.setState({
+            groupsStudent: groups,
+        });
+    }
 
-  render() {
-    return (
-      <div className="home-page-card">
-        <p className="title">分组列表</p>
-        <p className="groupsBtn">
-          <button onClick={this.getAll} type="button">
-            分组学员
-          </button >
-        </p>
+    addStudent = async (name) => {
+        // const name = await prompt('');
+        await addStudent(name);
+        this.getAllStu();
+    }
 
-        <p className="addBtn">
-          <button onClick={this.addStudent} type="button">
-            添加学员
-          </button >
-        </p>
-      </div>
-    );
-  }
+    getAllStu = async () => {
+        const data = await getAllStudents();
+        this.setState({
+            studentList: data
+        })
+    }
+
+    componentDidMount() {
+        this.getAllStu();
+        this.getAllGroup();
+    }
+
+    render() {
+        return (
+            <div className="home-page-card">
+                <header className="header">
+                    <h1 className="title">分组列表</h1>
+                    <button onClick={this.makeGroup} type="button" className="groupsBtn">
+                        分组学员
+                    </button>
+                </header>
+                {this.state.groupsStudent.length > 0 &&
+                <section className="groups-student">
+                    {this.state.groupsStudent.map((group, index) => (
+                        <section key={index} className="groups-container">
+                            <p className="groups-name">{group.key} 组</p>
+                            <GroupsStudent group={group.value}/>
+                        </section>
+                    ))}
+                </section>
+                }
+                <StudentList allStu={this.state.studentList} addStudent={this.addStudent}/>
+            </div>
+        );
+    }
 }
 
 export default Home;

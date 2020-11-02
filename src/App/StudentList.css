@@ -1,0 +1,58 @@
+.container h1 {
+    font-size: 24px;
+    margin-left: 5%;
+    width: 90%;
+}
+
+.student-list {
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.students-container {
+    display: inline-block;
+    background-color: lightgrey;
+    width: 9%;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    margin: 10px 1%;
+}
+
+.student-info {
+    margin: 0;
+    font-size: 16px;
+}
+
+.add-button {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    background-color: lightgrey;
+    outline: none;
+}
+
+.name-input {
+    background-color: white;
+    width: 95%;
+    font-size: 16px;
+}
+
+.form-button {
+    width: 45%;
+    margin: 2%;
+}
+
+.add-input {
+    margin-top: -20px;
+}
+
+.student-group{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}

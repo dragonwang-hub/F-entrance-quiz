@@ -1,11 +1,47 @@
-.title{
-  display: inline-block;
-  margin-right:100px;
+header {
+    padding-top: 50px;
 }
-.groupsBtn{
-  display: inline-block;
-  background-color:#ea5455;
+
+h1 {
+    font-size: 24px;
 }
-.home-page-card{
-  background-color: #f7f7f7;
+
+.groupsBtn {
+    background-color: orangered;
+    color: white;
+    padding: 10px 30px;
+}
+
+.home-page-card {
+    background-color: #f7f7f7;
+    padding-bottom: 50px;
+}
+
+.header {
+    height: 80px;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.groups-student {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.groups-container {
+    margin: 0 auto 10px;
+    border: 2px solid darkgray;
+}
+
+.groups-name {
+    background-color: grey;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding-top:20px;
+    margin-top:0;
 }
