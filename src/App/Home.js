@@ -32,7 +32,6 @@ class Home extends Component {
     }
 
     addStudent = async (name) => {
-        // const name = await prompt('');
         await addStudent(name);
         this.getAllStu();
     }

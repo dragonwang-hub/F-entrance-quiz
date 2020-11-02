@@ -8,6 +8,10 @@ const HttpClient = axios.create({
     }
 })
 
+export const makeGroups = async () => {
+    const response = await HttpClient.post('/group');
+}
+
 export const getAllStudents = async () => {
     const response = await HttpClient.get('/')
     return response.data;
@@ -21,8 +25,4 @@ export const getGroupStudents = async () => {
 export const addStudent = async (name) => {
     const response = await HttpClient.post('/add', name)
     return response.data;
-}
-
-export const makeGroups = async () => {
-    await HttpClient.post('/group');
 }

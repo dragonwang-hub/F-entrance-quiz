@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-// import './StudentList.css'
-
 class GroupsStudent extends Component {
     render() {
         return (
