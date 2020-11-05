@@ -5,7 +5,6 @@ import './Home.css';
 // TODO GTB-工程实践: - 整个文件的ESlint是挂的
 // TODO GTB-工程实践: - 组件的命名不合理，没有体现业务逻辑
 class Home extends Component {
-  // TODO GTB-知识点: - state应该被放在constructor里面
   state = {
     studentList: [],
     groupsStudent: {},

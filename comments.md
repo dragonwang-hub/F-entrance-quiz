@@ -18,7 +18,6 @@ __Details:__
 __Details:__
 
 - \- http://localhost:8080/应该被提出为API的公共变量
-- \- state应该被放在constructor里面
 - \- 语法错误，getAllStudents is not defined
 - \- 也许是没有时间写代码了，我只单纯从现在有的代码评判的话，对React的组件划分概念还不太清楚，不能合理地运用
 
